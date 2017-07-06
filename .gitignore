@@ -1,6 +1,7 @@
 *.swp
 *.swo
 *.css
+*.css.map
 *.gem
 *.rbc
 /.config
