@@ -19,11 +19,17 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Ride Alert
+          %a.navbar-brand{:href => "/"} Ride Alert
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li.active
+            %li
               %a{:href => "/"} Home
+            %li
+              %a{:href => "/check_in"} Check In
+            %li
+              %a{:href => "/check_out"} Check Out
+            %li
+              %a{:href => "/warning"} Warning
     .container
       = yield
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"}

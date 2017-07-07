@@ -1,0 +1,17 @@
+.row
+  .col-md-6.col-md-offset-3.scanme
+    %h1 ATTENTION: ${RIDER NAME}
+    %h1 You are expected to check out soon.
+.row
+  #timer.col-md-6.col-md-offset-3.scanme
+    5:00 remaining
+.row
+  .col-md-4.scanme
+    %a.btn.btn-primary{:href => "/check_in"} 
+      Ride more
+  .col-md-4.scanme
+    %a.btn.btn-primary{:href => "/check_out"} 
+      I'm done
+  .col-md-4.scanme
+    %a.btn.btn-danger{:href => "/notify_confirm"} 
+      Rider Missing
