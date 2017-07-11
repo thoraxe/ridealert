@@ -10,6 +10,7 @@
     %title Ride Alert
     %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel: "stylesheet", integrity: "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin: "anonymous"}
     %link{href: "/stylesheets/main.css", rel: "stylesheet"}
+    %link{href: "/stylesheets/TimeCircles.css", rel: "stylesheet"}
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container
@@ -34,3 +35,40 @@
       = yield
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"}
     %script{src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity: "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin: "anonymous"}
+    %script{src: "/javascript/TimeCircles.js"}
+    :javascript
+      $( document ).ready(function() {
+        $("#timer").TimeCircles({
+          "animation": "smooth",
+          "count_past_zero": "false",
+          "bg_width": 0.2,
+          "fg_width": 0.013333333333333334,
+          "circle_bg_color": "#60686F",
+          "time": {
+              "Days": {
+                  "text": "Days",
+                  "color": "#FFCC66",
+                  "show": false
+              },
+              "Hours": {
+                  "text": "Hours",
+                  "color": "#99CCFF",
+                  "show": false
+              },
+              "Minutes": {
+                  "text": "Minutes",
+                  "color": "#BBFFBB",
+                  "show": true
+              },
+              "Seconds": {
+                  "text": "Seconds",
+                  "color": "#FF9999",
+                  "show": true
+              }
+          }
+        }).addListener(function(unit,value,total) {
+          if(value == 0){
+            $(location).attr('href', '/notify');
+          }
+        });
+      });

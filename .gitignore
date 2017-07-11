@@ -1,7 +1,5 @@
 *.swp
 *.swo
-*.css
-*.css.map
 .sass-cache
 *.gem
 *.rbc

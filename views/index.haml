@@ -1,4 +1,11 @@
 .row
   .col-md-6.col-md-offset-3.scanme
     %h1 Welcome to Ride Alert
-    %h1 Please scan your bracelet.
+.row
+  .col-md-6.col-md-offset-3.scanme
+    %form{:action => "/check_in"}
+      .form-group
+        %label{:for => "phone_number"}Phone Number
+        %input.form-control{:type => "tel", :id => "phone_number", :placeholder => "+1-555-202-4567"} 
+      %button.btn.btn-primary{:type => "submit"}
+        Let's ride! 
